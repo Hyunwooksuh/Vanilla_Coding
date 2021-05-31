@@ -1,0 +1,14 @@
+Q. 다음 출력 값으로 올바른 것은?
+var arr = [100, 200, 300];
+console.log(typeof(arr)); -> Object
+
+
+자바스크립트의 자료형 
+number: var num = 1000;
+string: var string = 'Hello';
+boolean: var bool = true;
+null: var foo = null;
+undefined: var bar;
+object: var obj = { name: 'Lee', gender: 'male'};
+array: var array = [1,2,3];
+function: var foo = function() {};
