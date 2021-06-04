@@ -1,0 +1,7 @@
+Q. 이름이 입력되면 전부 대문자로 출력되는 프로그램을 만드세요
+
+var string = prompt('이름 입력');
+string = string.toUpperCase();
+console.log(string);
+
+//toLowerCase()는 소문자로 변환하기 

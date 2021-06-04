@@ -1,0 +1,14 @@
+1. pop();
+2. splice();
+3. concat();
+4. split(); <-> join();
+5. reverse();
+6. Math.floor(); <-> Math.ceil(); <-> Math.round();
+7. Math.pow();
+8. parseInt();
+9. toUpperCase() <-> toLowerCase();
+10. indexOf()
+11. sort()
+12.
+13.
+14.
