@@ -1,0 +1,61 @@
+2차시도 풀이:
+ - 답을 알았다. javascript에서는 compareFunction이 제공되지 않으면,
+   유니코드 포인터에 의거해, '문자열'을 비교하여 정렬함.
+   숫자를 비교해야하므로, sort 함수에 정렬순서를 정의하면 됨!
+function solution(array, commands) {
+    
+    var result = [];
+    for (var i = 0; i<commands.length; i++) {
+        var startidx = commands[i][0] -1;
+        var endidx = commands[i][1] - 1;
+        
+        var arr = [];
+        for (var x = startidx; x<=endidx; x++) {
+            arr.push(array[x]);
+        }
+        arr.sort(function(a,b) {
+            return (a-b);
+        });
+        var taridx = commands[i][2] - 1;
+        result.push(arr[taridx]);
+    }
+    return result;
+}
+정확성  테스트
+테스트 1 〉	통과 (0.10ms, 30.1MB)
+테스트 2 〉	통과 (0.09ms, 30MB)
+테스트 3 〉	통과 (0.09ms, 30.1MB)
+테스트 4 〉	통과 (0.11ms, 30MB)
+테스트 5 〉	통과 (0.10ms, 30.1MB)
+테스트 6 〉	통과 (0.09ms, 30.1MB)
+테스트 7 〉	통과 (0.15ms, 30.2MB)
+---------------------------------------------------------------------------
+오답풀이:
+ - 희안하게도 테스트2만 실패가 나왔다. 
+
+function solution(array, commands) {
+    
+    var result = [];
+    for (var i = 0; i<commands.length; i++) {
+        var startidx = commands[i][0] -1;
+        var endidx = commands[i][1] - 1;
+        
+        var arr = [];
+        for (var x = startidx; x<=endidx; x++) {
+            arr.push(array[x]);
+        }
+        arr.sort();
+        var taridx = commands[i][2] - 1;
+        result.push(arr[taridx]);
+    }
+    return result;
+}
+
+정확성  테스트
+테스트 1 〉	통과 (0.06ms, 30.1MB)
+테스트 2 〉	실패 (0.08ms, 30.3MB)
+테스트 3 〉	통과 (0.08ms, 30.1MB)
+테스트 4 〉	통과 (0.07ms, 30.1MB)
+테스트 5 〉	통과 (0.09ms, 30.1MB)
+테스트 6 〉	통과 (0.08ms, 30.1MB)
+테스트 7 〉	통과 (0.08ms, 30.1MB)

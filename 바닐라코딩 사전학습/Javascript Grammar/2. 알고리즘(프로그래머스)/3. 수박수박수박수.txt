@@ -1,0 +1,23 @@
+function solution(n) {
+    var string = "수박";
+    if (n % 2 == 0) {
+        var result ="";
+        for (var i = 0; i<n/2; i++) {
+            result += string;
+        }
+        return result;
+    }
+    else {
+        var num = (n-1)/2
+        var result = "";
+        for (var i = 0; i<num; i++) {
+            result += string;
+        }
+        return result + string[0];
+    }
+}
+README:
+홀수와 짝수의 경우를 나눠서 풀이를 하였다.
+짝수인 경우에는 parameter로 받은 값에서 나누기 2를 한 값이 "수박"의 반복횟수이며,
+홀수인 경우에는 parameter로 받은 값에서 1을 뺀 뒤 나누기 2를 한 값에 "수"를 하나 붙여주면
+원하는 결과가 출력된다. 

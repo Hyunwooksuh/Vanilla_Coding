@@ -1,0 +1,61 @@
+function solution(participant, completion) {
+
+    participant.sort();
+    completion.sort();
+    
+    for (var i = 0; i<participant.length; i++) {
+        if (participant[i] != completion[i]) {
+            return participant[i];
+        }
+    }
+}
+README:
+효율성(시간 문제)을 올리기 위해서, 모든 배열을 탐색하며 찾는 것보다는
+배열을 sort하여 알파벳 순으로 두 배열을 맞춘 뒤에 일치하지 않으면 존재하지 
+않으므로, 그 때 participant의 element를 return하는 방향으로 답을 구함
+----------------------------------------------------------------------------------
+1번 오답풀이
+ - 처음에는 2중 for문을 돌면서 존재 여부를 테스트하는 코드를 작성하였음
+ - 존재여부를 판단하기 위해서 flag변수를 사용하였음	
+function solution(participant, completion) {
+    for (var y = 0; y<participant.length; y++) {
+        var flag = 0;
+        for (var x = 0; x<completion.length; x++) {
+            if (participant[y] == completion[x]) {
+                completion.splice(x,1);
+                flag++;
+            }
+        }
+        if (flag == 0) {
+            return participant[y];
+        }
+    }
+}
+-----------------------------------------------------------------------------------
+2번 오답풀이(답은 OK, 시간초과)
+ - 오답의 이유는 아마 for문으로 모든 함수를 돌아야하기 때문일 것으로 보인다.
+function solution(participant, completion) {
+
+    for (var i = 0; i<participant.length; i++) {
+        var str = participant[i];
+        var ret = completion.indexOf(str);
+        if(completion.indexOf(str) != -1) {
+            completion.splice(ret, 1);
+        } else {
+            return str;
+        };
+    }
+}
+정확성  테스트
+테스트 1 〉	통과 (0.06ms, 30MB)
+테스트 2 〉	통과 (0.05ms, 30MB)
+테스트 3 〉	통과 (0.19ms, 30.1MB)
+테스트 4 〉	통과 (1.02ms, 30.1MB)
+테스트 5 〉	통과 (0.54ms, 30.4MB)
+효율성  테스트
+테스트 1 〉	실패 (시간 초과)
+테스트 2 〉	실패 (시간 초과)
+테스트 3 〉	실패 (시간 초과)
+테스트 4 〉	실패 (시간 초과)
+테스트 5 〉	실패 (시간 초과)
+----------------------------------------------------------------------------

@@ -1,0 +1,30 @@
+function solution(s) {
+    var n = s.length;
+    if (n % 2 == 1) {
+        var index = (n-1)/2;
+        return s[index];
+    }
+    else {
+        var index = n/2;
+        return s[index-1] + s[index];
+    }
+}
+----------------------------------------------------
+README:
+홀수일 경우와 짝수일 경우의 index를 달리 설정하여 풀이한다
+case 몇 개를 귀납적으로 실험해보면 일반식을 도출할 수 있다
+
+홀수일 경우 (ex. 길이가 7)
+a b c d e f g
+0 1 2 3 4 5 6
+
+length-1을 나누면, 중간 index인 3이 나옴 -> (length-1)/2
+
+짝수일 경우 (ex. 길이가 6)
+a b c d e f
+0 1 2 3 4 5 
+
+length/2의 값은 3이며, length/2 - 1의 값은 2이다
+두 인덱스는 string의 두 중간 index이며 이를 일반식으로 만들면 
+->     var index = n/2;
+        return s[index-1] + s[index];
