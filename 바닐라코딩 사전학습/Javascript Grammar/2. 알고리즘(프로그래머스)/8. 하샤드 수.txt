@@ -1,0 +1,39 @@
+function solution(x) {
+    var answer = true;
+    
+    var xstr = x.toString();
+    var sum = 0;
+    for (var i = 0; i<xstr.length; i++){
+        var num = parseInt(xstr[i]);
+        sum += num;
+    }
+    
+    if (x % sum == 0) return answer;
+    else return false;
+}
+
+README: 
+문자열로 변환 후, 모든 문자열의 element를 for문을 통해 더해준 뒤
+if문을 사용하여 true와 false를 구별하였음
+
+정확성  테스트
+테스트 1 〉	통과 (0.06ms, 30.1MB)
+테스트 2 〉	통과 (0.06ms, 30.1MB)
+테스트 3 〉	통과 (0.04ms, 29.9MB)
+테스트 4 〉	통과 (0.06ms, 29.9MB)
+테스트 5 〉	통과 (0.06ms, 30MB)
+테스트 6 〉	통과 (0.06ms, 30.1MB)
+테스트 7 〉	통과 (0.06ms, 30MB)
+테스트 8 〉	통과 (0.06ms, 30.1MB)
+테스트 9 〉	통과 (0.04ms, 30.1MB)
+테스트 10 〉	통과 (0.06ms, 30.1MB)
+테스트 11 〉	통과 (0.05ms, 29.7MB)
+테스트 12 〉	통과 (0.06ms, 29.8MB)
+테스트 13 〉	통과 (0.06ms, 30MB)
+테스트 14 〉	통과 (0.04ms, 30.1MB)
+테스트 15 〉	통과 (0.07ms, 29.8MB)
+테스트 16 〉	통과 (0.06ms, 30MB)
+테스트 17 〉	통과 (0.06ms, 30.1MB)
+채점 결과
+정확성: 100.0
+합계: 100.0 / 100.0
