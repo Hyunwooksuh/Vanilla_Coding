@@ -1,0 +1,59 @@
+[LOGIN 강의 내용 정리]
+
+1. Javascript로 Element 가져오기
+ - 단일값: document.getElementById("title)
+ - 복수값(array): document.getElementsByClassName
+ - document.querySelector(".hello h1")
+ - document.querySelector("#hello form")
+
+2. Event: click, mouseenter, mouseleave, resize, copy, offline, online
+ - 대상요소: const h1 = document.querySelector(".hello h1")
+ - 대상함수: function handleMouseLeave() {
+		h1.innerText = "Mouse is gone"; 
+	   }
+ - Event 호출: h1.addEventListener("mouseleave", handleMouseLeave);
+
+3. toggle: classList에 존재하지 않으면, class에 add();
+             classList에 존재하는 경우, class에서 remove();
+ - function handleTitleClick() {
+	h1.classList.toggle("clicked");
+   }
+ - h1.addEventListener("click", handleTitleClick)
+
+4. Form : input의 유효성 검사 가능 
+ - 단, 브라우저가 input에 작성된 이후 자동 새로고침 -> 해결책 필요
+ - const loginForm = document.querySelector("#login-form")
+ - function onLoginSubmit(event) {
+     event.preventDefault();
+    }
+ - loginForm.addEventListener("submit", onLoginSubmit)
+
+5. HELLO HYUNWOOK 소스코드
+
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+
+const HIDDEN_CLASSNAME = "hidden";
+
+function onLoginSubmit(event) {
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+loginForm.addEventListener("submit", onLoginSubmit);
+ 
+[CLOCK 강의내용 정리]
+1. setInterval : 정해진 시간마다 함수를 출력 / setTimeout : 정해진 시간 내 한번만 호출
+ - function sayHello() { console.log("hello"); }
+ - setInterval(sayHello, 5000);
+ - setTimeout(sayHello, 5000);
+2. padStart : string 길이를 조정 (특정길이가 아니라면, 특정 문자열 추가)
+ - "1".padStart(2, "0") -> "01"
+ - "14".padStart(14, "0") -> "14"
+
+
+
