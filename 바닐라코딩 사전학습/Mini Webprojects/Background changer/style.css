@@ -1,0 +1,28 @@
+
+#colorText {
+    font-size:xx-large;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20%;
+}
+
+#button {
+    display:button;
+    text-align: center;
+}
+#btn {
+    background-color: rgb(80, 70, 70);
+    color: white;
+    padding: 1em;
+    border: none;
+    transition: all .3s ease;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    outline: none;
+    align-self: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
