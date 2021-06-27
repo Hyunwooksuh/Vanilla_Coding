@@ -5,8 +5,8 @@ body {
     text-align: center;
     color: black;
     padding: 1%;
+    margin-top: 200px;
 }
-
 img {
     position:absolute;
     top:0;
@@ -15,4 +15,28 @@ img {
     height: 100%;
     z-index: -1;
     animation: fadeIn 0.5 linear;
+}
+#login-form {
+    margin-left:60px;
+}
+#greeting {
+
+}
+#todo-form {
+
+}
+#todo-list{
+    list-style:none;
+}
+#clock{
+
+}
+#weather {
+    font-weight:bold;
+}
+#quote {
+    font-weight: bold;
+    color: darkkhaki;
+    text-align: 50%;
+    margin: 6rem;
 }
