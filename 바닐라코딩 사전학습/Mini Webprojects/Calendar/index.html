@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Calendar Project</title>
+</head>
+
+<body>
+  <header>
+    <h1>Calendar</h1>
+  </header>
+
+  <section>
+    <div class="calendar-container">
+      <div class="current-day">
+        <div id="day">SUN</div>
+        <div id="date">27</div>
+      </div>
+      <p id="current-month">JUN 2021</p>
+    </div>
+    <!-- 왼, 오른 버튼 -->
+    <div class=btn>
+      <img src="/images/prev.svg" alt="button left" id="btn-left">
+      <img src="/images/next.svg" alt="button right" id="btn-right">
+    </div>
+    <!-- 캘린더 -->
+    <div class="calendar-main">
+      <table class="calendar-main-table">
+        <thead>
+          <tr>
+            <td>sun </td>
+            <td>mon </td>
+            <td>tue </td>
+            <td>wed </td>
+            <td>thu </td>
+            <td>fri </td>
+            <td>sat </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="calendar-row" id="calendar-row-1">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="calendar-row" id="calendar-row-2">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="calendar-row" id="calendar-row-3">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="calendar-row" id="calendar-row-4">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="calendar-row" id="calendar-row-5">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="calendar-row" id="calendar-row-6">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
