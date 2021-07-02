@@ -17,7 +17,7 @@
     <div id=wrapper>
       <form class="number">
         <input type="text" name="number" value="" placeholder="세자리 수로 입력하세요" id="input-num"/>
-        <button type="submit" onclick="compareNum()">SUBMIT</button>      
+        <button type="button" id="submit-btn">SUBMIT</button>      
       </form>
 
       <div class=wrapper2>
@@ -28,6 +28,9 @@
           <tr>
             <td id=ball-cnt>BALL : 0B</td>
           </tr>
+          <tr>
+            <td id=time-cnt>남은횟수:10회</td>
+          </tr> 
       </div>
       </table>
 
@@ -39,7 +42,7 @@
     </div>
   </section>
 
-  <script src="index.js"></script>
+  <script src="./index.js"></script>
 </body>
 
 </html>
