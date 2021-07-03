@@ -6,12 +6,12 @@ const submitBtn = document.getElementById("submit-btn");
 const strikeCount = document.getElementById("strike-cnt");
 const ballCount = document.getElementById("ball-cnt");
 
-var timeLeft = document.getElementById("time-cnt");
-var answerNum = 1;
+let timeLeft = document.getElementById("time-cnt");
+let answerNum = 1;
 let ballCnt = 0;
 let strikeCnt = 0;
 
-var tryLeft = 10;
+let tryLeft = 10;
 //1. 시작버튼 누르면 랜덤한 3자리 수 생성 
 function createNum() {
     answerNum = Math.floor((Math.random()*1000))
@@ -30,6 +30,7 @@ function threeDigitNum() {
 }
 function compareNum() {
     var submittedNum = inputValue.value;
+    submittedNum = String(submittedNum);
     //횟수 차감
     tryLeft--;
     timeLeft.innerText = "남은횟수:" + tryLeft + "회";
@@ -37,28 +38,25 @@ function compareNum() {
     strikeCnt = 0;
     //스트 갯수 (숫자O, 위치O)
     for (let i = 0; i<3; i++) {
-        if (submittedNum[i] == answerNum[i]) ballCnt++;
+        if (answerNum[i] == submittedNum[i]) strikeCnt++;
     }
     //볼 갯수 (숫자O, 위치X)
     for (let y = 0; y<3; y++) {
         for (let x = 0; x<3; x++) {
-            if (answerNum[y] == submittedNum[x]) strikeCnt++;
+            if (answerNum[y] == submittedNum[x]) ballCnt++;
         }
     }
     
-    ballCnt -= strikeCnt;
     strikeCount.innerText = "STRIKE : "+ strikeCnt +"S";
     ballCount.innerText = "BALL : " + ballCnt + "B";
 
     //결과 Alert
     if (strikeCnt == 3 && ballCnt == 0) {
         alert("승리!");
-        localStorage.clear();
-        tryLeft = 10;
+        restart();
     } else if (tryLeft == 0 && !(strikeCnt == 3 && ballCnt == 0)){
         alert("재도전하세요!");
-        localStorage.clear();
-        tryLeft = 10;
+        restart();
     }
 }
 function restart() {
